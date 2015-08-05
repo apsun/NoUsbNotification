@@ -1,8 +1,13 @@
 # NoAdbNotification
 
-Removes the USB debugging notification on Android. Has the same effect 
-as setting `persist.adb.notify=0` in `/system/build.prop`, without 
+Removes the USB debugging notification on Android. Has the same effect
+as setting `persist.adb.notify=0` in `/system/build.prop`, without
 modifying any system files.
+
+Update: Also removes the MTP/PTP connection notification, for your
+debugging pleasure.
+
+Relevant code can be found [here](https://github.com/android/platform_frameworks_base/blob/master/services/usb/java/com/android/server/usb/UsbDeviceManager.java).
 
 ## Requirements
 
@@ -12,7 +17,7 @@ modifying any system files.
 
 ## Download
 
-Download a pre-built APK [here](https://bitbucket.org/crossbowffs/noadbnotification/downloads/NoAdbNotification.apk), 
+Download a pre-built APK [here](https://bitbucket.org/crossbowffs/noadbnotification/downloads/NoAdbNotification.apk),
 or build the app yourself (it only takes a few seconds!)
 
 ## License

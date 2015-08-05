@@ -20,6 +20,16 @@ public class Hook implements IXposedHookLoadPackage {
                 }
             });
 
+        XposedHelpers.findAndHookMethod(
+            "com.android.server.usb.UsbDeviceManager$UsbHandler", lpparam.classLoader,
+            "updateUsbNotification", new XC_MethodHook() {
+                @Override
+                protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
+                    XposedBridge.log("In UsbHandler#updateUsbNotification()");
+                    param.setResult(null);
+                }
+            });
+
         XposedBridge.log("NoAdbNotification init successful!");
     }
 }
