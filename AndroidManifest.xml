@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.crossbowffs.noadbnotification"
+    package="com.crossbowffs.nousbnotification"
     android:versionCode="1"
     android:versionName="1.0">
     <uses-sdk
         android:minSdkVersion="4"
         android:targetSdkVersion="22"/>
     <application
-        android:label="NoAdbNotification">
+        android:label="NoUsbNotification">
         <meta-data
             android:name="xposedmodule"
             android:value="true"/>
         <meta-data
             android:name="xposeddescription"
-            android:value="Removes the USB debugging notification"/>
+            android:value="Removes the USB debugging and MTP/PTP notifications"/>
         <meta-data
             android:name="xposedminversion"
             android:value="2"/>

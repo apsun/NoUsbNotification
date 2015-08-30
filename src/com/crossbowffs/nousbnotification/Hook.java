@@ -1,4 +1,4 @@
-package com.crossbowffs.noadbnotification;
+package com.crossbowffs.nousbnotification;
 
 import de.robv.android.xposed.*;
 import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;
@@ -30,6 +30,6 @@ public class Hook implements IXposedHookLoadPackage {
                 }
             });
 
-        XposedBridge.log("NoAdbNotification init successful!");
+        XposedBridge.log("NoUsbNotification init successful!");
     }
 }
