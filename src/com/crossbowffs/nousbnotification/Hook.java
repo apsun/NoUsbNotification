@@ -1,9 +1,12 @@
 package com.crossbowffs.nousbnotification;
 
+import android.util.Log;
 import de.robv.android.xposed.*;
 import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;
 
 public class Hook implements IXposedHookLoadPackage {
+    private static final String TAG = "NoUsbNotification";
+
     @Override
     public void handleLoadPackage(LoadPackageParam lpparam) throws Throwable {
         if (!"android".equals(lpparam.packageName)) {
@@ -15,7 +18,7 @@ public class Hook implements IXposedHookLoadPackage {
             "updateAdbNotification", new XC_MethodHook() {
                 @Override
                 protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
-                    XposedBridge.log("In UsbHandler#updateAdbNotification()");
+                    Log.v(TAG, "In UsbHandler#updateAdbNotification()");
                     param.setResult(null);
                 }
             });
@@ -25,11 +28,11 @@ public class Hook implements IXposedHookLoadPackage {
             "updateUsbNotification", new XC_MethodHook() {
                 @Override
                 protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
-                    XposedBridge.log("In UsbHandler#updateUsbNotification()");
+                    Log.v(TAG, "In UsbHandler#updateUsbNotification()");
                     param.setResult(null);
                 }
             });
 
-        XposedBridge.log("NoUsbNotification init successful!");
+        Log.i(TAG, "NoUsbNotification init successful!");
     }
 }
